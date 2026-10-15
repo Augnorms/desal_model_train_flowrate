@@ -52,6 +52,30 @@ The model is trained on `clean_patterned_desalination_dataset.xlsx`.
 
 ---
 
+## 📈 Model Performance & Benchmark Results
+
+The models were trained on 16,000 records (80%) and evaluated against an unseen holdout test set of 4,000 records (20%, `random_state=42`):
+
+| Target Indicator | Model Algorithm | $R^2$ Score | Mean Absolute Error (MAE) | Primary Feature Driver |
+| :--- | :--- | :---: | :---: | :--- |
+| **Permeate Flowrate** ($m^3/h$) | Random Forest Regressor | **0.9848** | **0.80 $m^3/h$** | Flux (75.4%) |
+| **Permeate TDS** ($ppm$) | Random Forest Regressor | **0.9599** | **9.49 $ppm$** | Feed TDS (79.3%) |
+
+### 🔍 Top Influential Features
+
+- **For Permeate Flowrate**:
+  1. `Flux (LMH)` — 75.38%
+  2. `Feed Flowrate (m³/h)` — 10.87%
+  3. `Recovery (%)` — 8.76%
+  4. `Feed Temperature (°C)` — 3.36%
+
+- **For Permeate TDS**:
+  1. `Feed TDS (ppm)` — 79.26%
+  2. `Feed Salinity (g/L)` — 10.38%
+  3. `Feed Temperature (°C)` — 6.59%
+  4. `Pressure Drop (bar)` — 1.46%
+
+
 ## 📁 Repository Structure
 
 ```text
